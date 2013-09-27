@@ -1,9 +1,10 @@
-require "lita"
+require 'lita'
 
 module Lita
   module Handlers
     class Latex < Handler
-      route %r{\A(?:la)?tex(?:\s+me)\s+?(.*)\Z}, :latex, command: true
+
+      route %r(\A(?:tex|latex)(?:\s+me)?\s+(.*)\Z), :latex, command: true
 
       def latex(response)
         expression = URI.escape(response.matches.first.first)
