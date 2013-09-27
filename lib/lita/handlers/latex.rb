@@ -8,15 +8,16 @@ module Lita
 
       def latex(response)
         expression = URI.escape(response.matches.first.first)
+        image_url = URI::HTTP.build(
+          host: 'chart.apis.google.com',
+          path: '/chart',
+          query: "cht=tx&chl=#{ expression }",
+          fragment: '.png'
+        ).to_s
 
-        query = "cht=tx&chl=#{ expression }"
-        url = URI::HTTP.build(host: 'chart.apis.google.com',
-                        path: '/chart',
-                        query: query,
-                        fragment: '.png')
-
-        response.reply url.to_s
+        response.reply image_url
       end
+
     end
 
     Lita.register_handler(Latex)
