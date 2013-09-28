@@ -3,9 +3,9 @@ Gem::Specification.new do |spec|
   spec.version       = "0.0.1"
   spec.authors       = ["Zac Stewart"]
   spec.email         = ["zgstewart@gmail.com"]
-  spec.description   = %q{TODO: Add a description}
-  spec.summary       = %q{TODO: Add a summary}
-  spec.homepage      = "TODO: Add a homepage"
+  spec.description   = %q{A Lita handler for rendering LaTeX}
+  spec.summary       = %q{A Lita handler for rendering LaTeX}
+  spec.homepage      = "https://github.com/zacstewart/lita-flip"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files`.split($/)
