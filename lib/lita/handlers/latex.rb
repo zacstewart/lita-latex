@@ -4,22 +4,29 @@ module Lita
   module Handlers
     class Latex < Handler
 
+      LATEX_URL = URI::HTTP.build(
+        host:      'chart.apis.google.com',
+        path:      '/chart',
+        fragment:  '.png').freeze
+
       route %r(\A(?:tex|latex)(?:\s+me)?\s+(.*)\Z), :latex, command: true
 
       def latex(response)
         expression = URI.escape(response.matches.first.first)
-        image_url = URI::HTTP.build(
-          host: 'chart.apis.google.com',
-          path: '/chart',
-          query: "cht=tx&chl=#{ expression }",
-          fragment: '.png'
-        ).to_s
+        response.reply image_url(expression)
+      end
 
-        response.reply image_url
+      private
+
+      def image_url(expression)
+        LATEX_URL.dup.tap { |url|
+          url.query = "cht=tx&chl=#{ expression }"
+        }.to_s
       end
 
     end
 
     Lita.register_handler(Latex)
+
   end
 end
