@@ -1,23 +1,23 @@
 # lita-latex
 
-TODO: Add a description of the plugin.
+A [Lita][1] handler for rendering LaTeX.
 
 ## Installation
 
 Add lita-latex to your Lita instance's Gemfile:
 
-``` ruby
-gem "lita-latex"
+```ruby
+gem 'lita-latex'
 ```
-
-## Configuration
-
-TODO: Describe any configuration attributes the plugin exposes.
 
 ## Usage
 
-TODO: Describe the plugin's features and how to use them.
+zacstewart: Lita: latex me \Sigma
+
+Lita: ![\Sigma](http://chart.apis.google.com/chart?cht=tx&chl=\Sigma)
 
 ## License
 
 [MIT](http://opensource.org/licenses/MIT)
+
+[1]: https://github.com/jimmycuadra/lita/
