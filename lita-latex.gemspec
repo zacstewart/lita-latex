@@ -1,6 +1,6 @@
 Gem::Specification.new do |spec|
   spec.name          = "lita-latex"
-  spec.version       = "0.0.2"
+  spec.version       = "0.0.3"
   spec.authors       = ["Zac Stewart"]
   spec.email         = ["zgstewart@gmail.com"]
   spec.description   = %q{A Lita handler for rendering LaTeX}
