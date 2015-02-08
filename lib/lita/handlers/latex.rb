@@ -12,7 +12,7 @@ module Lita
       route %r(\A(?:tex|latex)(?:\s+me)?\s+(.*)\Z), :latex, command: true
 
       def latex(response)
-        expression = URI.escape(response.matches.first.first)
+        expression = CGI.escape(response.matches.first.first)
         response.reply image_url(expression)
       end
 
